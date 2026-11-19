@@ -38,7 +38,7 @@ This project analyzes semiconductor chips supply chain dataset using **explorato
 
    Analyzed wafer capacity, facility utilization, packaging backlogs, and manufacturing characteristics to identify production bottlenecks and potential supply chain risks.
 
-**Step 3:Predictive Modeling:**
+**Step 3: Predictive Modeling:**
 
    Built and compared regression models, including Bayesian Ridge, LightGBM, and CatBoost, to predict packaging backlog duration. Evaluated model performance using MAE, RMSE, and R².
 
@@ -52,21 +52,17 @@ This project analyzes semiconductor chips supply chain dataset using **explorato
 
 ## Key Findings
 
-## Key Findings
-
 ### 1. Advanced Packaging Technologies Experience the Longest Delays
 
-Analysis of **10,000 semiconductor facility records** revealed significant differences in packaging backlog across technologies.
+Analysis of **10,000 semiconductor facility records** revealed correlation between packaging backlog and packaging technologies. 
 
-| Packaging Technology | Average Backlog (Weeks) |
-|---|---:|
-| Foveros-3D | 28.19 |
-| CoWoS-S | 28.00 |
-| CoWoS-L | 27.97 |
-| InFO-PoP | 11.42 |
-| Standard FlipChip | 6.10 |
+Advanced packaging technologies such as **CoWoS and Foveros-3D experience approximately 4–5 times longer backlogs** than standard packaging, highlighting potential capacity constraints in advanced packaging operations.
 
-Advanced packaging technologies such as **CoWoS and Foveros-3D experience approximately 4–5 times longer backlogs** than standard FlipChip packaging, highlighting potential capacity constraints in advanced packaging operations.
+<p align="center">
+  <img src="images/Average%20packaging%20backlog%20by%20packaging%20type.png"
+       alt="Average Packaging Backlog by Packaging Type"
+       width="650">
+</p>
 
 ### 2. Advanced Process Nodes Face Higher Packaging Backlogs
 
@@ -93,17 +89,6 @@ The results demonstrate that regression models can estimate packaging backlog du
 Permutation feature importance identified **advanced packaging type** as the most influential variable in the selected regression model, substantially exceeding the contribution of other manufacturing characteristics.
 
 This indicates that the type of packaging technology is a major factor associated with backlog duration in the dataset.
-
-### 5. Predictive Analytics Supports Facility-Level Operational Prioritization
-
-The predictive model generated packaging backlog estimates for all **10,000 facilities**. A weighted Backlog Attention Score was developed using:
-
-- **70% — Predicted Packaging Backlog**
-- **30% — Capacity Utilization**
-
-The scoring framework helps distinguish facilities with long predicted queues from those requiring greater operational attention based on both backlog and capacity utilization.
-
-These insights support proactive bottleneck monitoring, facility prioritization, and data-driven capacity planning.
 
 ### End-to-End Analytical Workflow
 
